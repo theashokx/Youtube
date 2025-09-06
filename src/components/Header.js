@@ -10,7 +10,7 @@ const Header = () => {
     dispatch(toggleMenu());
   };
   return (
-    <div className="flex items-center justify-between p-3  shadow-md">
+    <div className="flex items-center justify-between p-1  shadow-md">
       {/* Left: Menu + Logo */}
       <div className="flex items-center gap-4">
         <img

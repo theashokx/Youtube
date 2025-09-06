@@ -6,7 +6,6 @@ import Store from "./utils/Store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
-import SideBar from "./components/SideBar";
 
 const appRouter = createBrowserRouter([
   {

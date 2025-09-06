@@ -11,11 +11,21 @@ const appSlice = createSlice({
       state.isMenuOpen = !state.isMenuOpen;
     },
 
+    closeMenu: (state) => {
+      state.isMenuOpen = false;
+    },
+    openMenu: (state) => {
+      state.isMenuOpen = true;
+    },
     hideMenuBar: (state) => {
+      state.isMenuBarHidden = true;
+    },
+    showMenuBar: (state) => {
       state.isMenuBarHidden = false;
     },
   },
 });
 
-export const { toggleMenu, hideMenuBar } = appSlice.actions;
+export const { toggleMenu, closeMenu, openMenu, hideMenuBar, showMenuBar } =
+  appSlice.actions;
 export default appSlice.reducer;

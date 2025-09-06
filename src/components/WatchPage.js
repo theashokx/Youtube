@@ -1,15 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-
-import { hideMenuBar } from "../utils/appSlice";
+import CurrentVideoPage from "./CurrentVideoPage";
+import SuggestionPage from "./SuggestionPage";
 
 const WatchPage = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(hideMenuBar());
-  }, [dispatch]);
-  return <div>WatchPage</div>;
+  return (
+    <div className="flex ">
+      <CurrentVideoPage />
+      <SuggestionPage />
+    </div>
+  );
 };
 
 export default WatchPage;

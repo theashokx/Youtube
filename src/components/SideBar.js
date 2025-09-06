@@ -15,6 +15,8 @@ const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   const isMenuBarHidden = useSelector((store) => store.app.isMenuBarHidden);
 
+  if (isMenuBarHidden && !isMenuOpen) return null;
+
   if (!isMenuOpen)
     return (
       <div className="w-28 p-3">

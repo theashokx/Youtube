@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { hideMenuBar, showMenuBar } from "../utils/appSlice";
 import { useSearchParams } from "react-router-dom";
-import { GOOGLE_API_KEY, VIDEO_DETAILS } from "../utils/constant";
+import { GOOGLE_API_KEY } from "../utils/constant";
 import ChannelInfo from "./ChannelInfo";
 
 const CurrentVideoPage = () => {
@@ -41,7 +41,7 @@ const CurrentVideoPage = () => {
         <div className="px-6 pt-2">
           <iframe
             className="block rounded-lg "
-            width="800"
+            width="840"
             height="400"
             src={"https://www.youtube.com/embed/" + videoId + "?autoplay=1"}
             title="YouTube video player"
@@ -50,7 +50,7 @@ const CurrentVideoPage = () => {
             allowFullScreen
           ></iframe>
         </div>
-        <div className="px-4 py-2 w-[880px]">
+        <div className="px-2 py-2 w-[880px]">
           <ChannelInfo
             VideoId={videoId}
             snippet={videoDetails[0].snippet}

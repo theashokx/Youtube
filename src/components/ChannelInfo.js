@@ -14,7 +14,7 @@ const ChannelInfo = ({ VideoId, snippet, statistics }) => {
 
   const getComments = async () => {
     const data = await fetch(
-      `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=${VideoId}&key=${GOOGLE_API_KEY}`
+      `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=${VideoId}&maxResults=40&key=${GOOGLE_API_KEY}`
     );
     const json = await data.json();
     setComments(json.items);

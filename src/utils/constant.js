@@ -6,3 +6,6 @@ export const YOUTUBE_Videos_API =
 
 export const VIDEO_DETAILS =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id";
+
+export const YOUTUBE_SEARCH_SUGG =
+  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";

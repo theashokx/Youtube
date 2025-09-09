@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_SUGG } from "../utils/constant";
+import { cacheResult } from "../utils/searchSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestion, setShowSuggestion] = useState(false);
+  const searchCache = useSelector((store) => store.search);
 
   const toggelMenuHandler = () => {
     dispatch(toggleMenu());
@@ -17,17 +20,23 @@ const Header = () => {
   const getSearchQuery = async () => {
     const data = await fetch(YOUTUBE_SEARCH_SUGG + searchText);
     const json = await data.json();
-    console.log(json);
     setSuggestions(json[1]);
-    console.log(json[1]);
+    dispatch(
+      cacheResult({
+        [searchText]: [json[1]],
+      })
+    );
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => getSearchQuery(), 200);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    if (searchCache[searchText]) {
+      setShowSuggestion(searchCache[searchText]);
+    } else {
+      const timer = setTimeout(() => getSearchQuery(), 200);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
   }, [searchText]);
 
   return (
@@ -56,13 +65,15 @@ const Header = () => {
               setSearchText(e.target.value);
               setShowSuggestion(true);
             }}
-            onFocus={() => setShowSuggestion(false)}
-            onBlur={() => setShowSuggestion(true)}
+            onFocus={() => setShowSuggestion(true)}
+            onBlur={() => setShowSuggestion(false)}
             className="flex-1 h-10 border border-gray-300 rounded-l-full px-4 text-sm focus:outline-none focus:border-blue-500"
           />
+          {/* <Link to={"/search?v=" + searchText}> */}
           <button className="h-10 w-12 border border-gray-300 bg-gray-100 rounded-r-full hover:bg-gray-200 flex items-center justify-center">
             <SearchIcon className="text-gray-600" fontSize="small" />
           </button>
+          {/* </Link> */}
         </div>
 
         {searchText && showSuggestion && (
@@ -71,6 +82,10 @@ const Header = () => {
               <li
                 key={index}
                 className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                onMouseDown={() => {
+                  setSearchText(suggestion);
+                  setTimeout(() => setShowSuggestion(false), 100);
+                }}
               >
                 <SearchIcon className="text-gray-600 mr-2" fontSize="small" />
                 {suggestion}

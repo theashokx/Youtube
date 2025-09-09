@@ -37,7 +37,7 @@ const CurrentVideoPage = () => {
 
   return (
     videoDetails.length > 0 && (
-      <div className="px-4">
+      <div className="px-1">
         <div className="px-6 pt-2">
           <iframe
             className="block rounded-lg "

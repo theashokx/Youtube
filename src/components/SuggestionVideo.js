@@ -1,5 +1,6 @@
 import React from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { formatViews, timeAgo } from "../utils/helper";
 
 const SuggestionVideo = ({ video }) => {
   const { snippet, statistics } = video;
@@ -21,8 +22,8 @@ const SuggestionVideo = ({ video }) => {
           <CheckCircleIcon style={{ color: "green", fontSize: 12 }} />
         </h4>
         <div className="text-xs text-gray-500">
-          <span>{parseInt(viewCount).toLocaleString()} views</span> •{" "}
-          <span>{new Date(publishedAt).toDateString()}</span>
+          <span>{formatViews(viewCount)} views</span> •{" "}
+          <span>{timeAgo(publishedAt)}</span>
         </div>
       </div>
     </div>

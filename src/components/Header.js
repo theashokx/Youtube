@@ -69,11 +69,11 @@ const Header = () => {
             onBlur={() => setShowSuggestion(false)}
             className="flex-1 h-10 border border-gray-300 rounded-l-full px-4 text-sm focus:outline-none focus:border-blue-500"
           />
-          {/* <Link to={"/search?v=" + searchText}> */}
-          <button className="h-10 w-12 border border-gray-300 bg-gray-100 rounded-r-full hover:bg-gray-200 flex items-center justify-center">
-            <SearchIcon className="text-gray-600" fontSize="small" />
-          </button>
-          {/* </Link> */}
+          <Link to={"/search?v=" + searchText}>
+            <button className="h-10 w-12 border border-gray-300 bg-gray-100 rounded-r-full hover:bg-gray-200 flex items-center justify-center">
+              <SearchIcon className="text-gray-600" fontSize="small" />
+            </button>
+          </Link>
         </div>
 
         {searchText && showSuggestion && (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../utils/appSlice";
+import { toggleMenu, toggleUserMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_SUGG } from "../utils/constant";
 import { cacheResult } from "../utils/searchSlice";
 import { Link } from "react-router-dom";
@@ -15,6 +15,10 @@ const Header = () => {
 
   const toggelMenuHandler = () => {
     dispatch(toggleMenu());
+  };
+
+  const toggleUserMenuHandler = () => {
+    dispatch(toggleUserMenu());
   };
 
   const getSearchQuery = async () => {
@@ -97,6 +101,7 @@ const Header = () => {
 
       <div>
         <img
+          onClick={() => toggleUserMenuHandler()}
           className="h-8 w-8 rounded-full cursor-pointer"
           alt="user-icon"
           src="https://marketplace.canva.com/Dz63E/MAF4KJDz63E/1/tl/canva-user-icon-MAF4KJDz63E.png"

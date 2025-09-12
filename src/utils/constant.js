@@ -12,5 +12,7 @@ export const YOUTUBE_SEARCH_SUGG =
 
 export const LIVE_CHAT_COUNT = 25;
 export const Search_Result_API =
-  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=surfing&key=" +
-  GOOGLE_API_KEY;
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=";
+
+export const SHORTS_API =
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=45&videoDuration=short&q=shorts&regionCode=IN&key=";

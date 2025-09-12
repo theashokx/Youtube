@@ -19,32 +19,29 @@ const SideBar = () => {
 
   if (!isMenuOpen)
     return (
-      <div className="w-28 p-3">
+      <div className="fixed top-[64px] left-0 h-screen w-28 bg-white shadow-md p-3 z-40 mt-10">
         <ul className="flex flex-col items-center space-y-6">
           <Link to="/">
-            {" "}
             <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
               <HomeIcon fontSize="medium" />
-
               <span className="text-xs mt-1">Home</span>
             </li>
           </Link>
-
-          <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
-            <SlowMotionVideoIcon fontSize="medium" />
-            <span className="text-xs mt-1">Shorts</span>
-          </li>
+          <Link to="/shorts">
+            <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
+              <SlowMotionVideoIcon fontSize="medium" />
+              <span className="text-xs mt-1">Shorts</span>
+            </li>
+          </Link>
 
           <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
             <SubscriptionsIcon fontSize="medium" />
             <span className="text-xs mt-1">Subscriptions</span>
           </li>
-
           <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
             <AccountCircleIcon fontSize="medium" />
             <span className="text-xs mt-1">You</span>
           </li>
-
           <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
             <HistoryIcon fontSize="medium" />
             <span className="text-xs mt-1">History</span>
@@ -52,8 +49,9 @@ const SideBar = () => {
         </ul>
       </div>
     );
+
   return (
-    <div className="w-56 h-screen bg-white shadow-md p-4 text-sm">
+    <div className="fixed top-[64px] left-0 h-screen w-56 bg-white shadow-md p-4 text-sm z-40 mt-10">
       <ul className="space-y-2 mb-6">
         <Link to="/">
           <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">

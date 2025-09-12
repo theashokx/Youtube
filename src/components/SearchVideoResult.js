@@ -27,7 +27,7 @@ const SearchVideo = ({ info }) => {
 
         <div className="flex items-center mt-3 mb-2">
           <img
-            src={thumbnails.high.url}
+            src={thumbnails.default.url}
             alt={channelTitle}
             className="w-12 h-12 rounded-full mr-4"
           />

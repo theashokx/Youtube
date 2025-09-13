@@ -9,6 +9,7 @@ import WatchPage from "./components/WatchPage";
 
 import SearchPage from "./components/SearchPage";
 import ShortsPage from "./components/ShortsPage";
+import SubscriptionPage from "./components/SubscriptionPage";
 
 const appRouter = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/search",
         element: <SearchPage />,
+      },
+
+      {
+        path: "/subscriptions",
+        element: <SubscriptionPage />,
       },
       {
         path: "/shorts",

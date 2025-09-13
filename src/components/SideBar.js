@@ -33,11 +33,12 @@ const SideBar = () => {
               <span className="text-xs mt-1">Shorts</span>
             </li>
           </Link>
-
-          <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
-            <SubscriptionsIcon fontSize="medium" />
-            <span className="text-xs mt-1">Subscriptions</span>
-          </li>
+          <Link to="/subscriptions">
+            <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
+              <SubscriptionsIcon fontSize="medium" />
+              <span className="text-xs mt-1">Subscriptions</span>
+            </li>
+          </Link>
           <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
             <AccountCircleIcon fontSize="medium" />
             <span className="text-xs mt-1">You</span>

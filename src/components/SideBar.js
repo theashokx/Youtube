@@ -39,14 +39,12 @@ const SideBar = () => {
               <span className="text-xs mt-1">Subscriptions</span>
             </li>
           </Link>
-          <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
-            <AccountCircleIcon fontSize="medium" />
-            <span className="text-xs mt-1">You</span>
-          </li>
-          <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
-            <HistoryIcon fontSize="medium" />
-            <span className="text-xs mt-1">History</span>
-          </li>
+          <Link to="/you">
+            <li className="flex flex-col items-center cursor-pointer hover:bg-gray-100 p-2 rounded-lg w-full">
+              <AccountCircleIcon fontSize="medium" />
+              <span className="text-xs mt-1">You</span>
+            </li>
+          </Link>
         </ul>
       </div>
     );
@@ -60,40 +58,52 @@ const SideBar = () => {
             <span>Home</span>
           </li>
         </Link>
-        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-          <SlowMotionVideoIcon fontSize="medium" />
-          <span>Shorts</span>
-        </li>
-        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-          <SubscriptionsIcon fontSize="medium" />
-          <span>Subscriptions</span>
-        </li>
+        <Link to="/shorts">
+          <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+            <SlowMotionVideoIcon fontSize="medium" />
+            <span>Shorts</span>
+          </li>
+        </Link>
+        <Link to="/subscriptions">
+          <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+            <SubscriptionsIcon fontSize="medium" />
+            <span>Subscriptions</span>
+          </li>
+        </Link>
       </ul>
 
       <hr className="my-2" />
 
       <h1 className="font-semibold text-gray-700 px-2 mb-2">You</h1>
       <ul className="space-y-2">
-        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-          <HistoryIcon fontSize="medium" />
-          <span>History</span>
-        </li>
+        <Link to="/history">
+          <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+            <HistoryIcon fontSize="medium" />
+            <span>History</span>
+          </li>
+        </Link>
         <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
           <PlaylistAddIcon fontSize="medium" />
           <span>Playlists</span>
         </li>
-        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-          <OndemandVideoIcon fontSize="medium" />
-          <span>Your videos</span>
-        </li>
-        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-          <WatchLaterIcon fontSize="medium" />
-          <span>Watch Later</span>
-        </li>
-        <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-          <ThumbUpIcon fontSize="medium" />
-          <span>Liked videos</span>
-        </li>
+        <Link to="/yourvideos">
+          <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+            <OndemandVideoIcon fontSize="medium" />
+            <span>Your videos</span>
+          </li>
+        </Link>
+        <Link to="/watchlater">
+          <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+            <WatchLaterIcon fontSize="medium" />
+            <span>Watch Later</span>
+          </li>
+        </Link>
+        <Link to="/liked">
+          <li className="flex items-center gap-4 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+            <ThumbUpIcon fontSize="medium" />
+            <span>Liked videos</span>
+          </li>
+        </Link>
       </ul>
     </div>
   );

@@ -10,6 +10,11 @@ import WatchPage from "./components/WatchPage";
 import SearchPage from "./components/SearchPage";
 import ShortsPage from "./components/ShortsPage";
 import SubscriptionPage from "./components/SubscriptionPage";
+import YouPage from "./components/YouPage";
+import History from "./components/History";
+import WatchLater from "./components/WatchLater";
+import LikedVideos from "./components/LikedVideos";
+import YourVideos from "./components/YourVideos";
 
 const appRouter = createBrowserRouter([
   {
@@ -36,6 +41,26 @@ const appRouter = createBrowserRouter([
       {
         path: "/shorts",
         element: <ShortsPage />,
+      },
+      {
+        path: "/you",
+        element: <YouPage />,
+      },
+      {
+        path: "/history",
+        element: <History />,
+      },
+      {
+        path: "/watchlater",
+        element: <WatchLater />,
+      },
+      {
+        path: "/liked",
+        element: <LikedVideos />,
+      },
+      {
+        path: "/yourvideos",
+        element: <YourVideos />,
       },
     ],
   },

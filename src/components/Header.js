@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu, toggleUserMenu } from "../utils/appSlice";
+import { toggleMenu, toggleUserMenu, toggleVoicebtn } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_SUGG } from "../utils/constant";
 import { cacheResult } from "../utils/searchSlice";
 import { Link } from "react-router-dom";
@@ -19,6 +20,10 @@ const Header = () => {
 
   const toggleUserMenuHandler = () => {
     dispatch(toggleUserMenu());
+  };
+
+  const handleVoicebtn = () => {
+    dispatch(toggleVoicebtn());
   };
 
   const getSearchQuery = async () => {
@@ -78,6 +83,14 @@ const Header = () => {
               <SearchIcon className="text-gray-600" fontSize="small" />
             </button>
           </Link>
+          <div className="flex flex-col items-center gap-4">
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 cursor-pointer transform transition-transform duration-200 hover:scale-110 ml-2"
+              onClick={() => handleVoicebtn()}
+            >
+              <KeyboardVoiceIcon />
+            </div>
+          </div>
         </div>
 
         {searchText && showSuggestion && (

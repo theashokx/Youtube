@@ -4,6 +4,7 @@ import MainContainer from "./MainContainer";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import ProfileInfo from "./ProfileInfo";
+import MicPage from "./MicPage";
 
 const Body = () => {
   return (
@@ -17,6 +18,9 @@ const Body = () => {
         </div>
         <div>
           <ProfileInfo />
+        </div>
+        <div>
+          <MicPage />
         </div>
         <div className="flex-1 ml-4 ">
           <Outlet />

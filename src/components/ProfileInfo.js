@@ -29,7 +29,6 @@ const ProfileInfo = () => {
           </div>
         </div>
 
-        {/* Options */}
         <div className="flex flex-col">
           <MenuItem icon={<AccountCircleIcon />} label="Switch Account" />
           <MenuItem icon={<ExitToAppIcon />} label="Sign out" />

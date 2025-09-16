@@ -6,6 +6,7 @@ const appSlice = createSlice({
     isMenuOpen: false,
     isMenuBarHidden: false,
     isUserOpen: false,
+    isVoiceBtn: false,
   },
   reducers: {
     toggleMenu: (state) => {
@@ -14,6 +15,9 @@ const appSlice = createSlice({
 
     toggleUserMenu: (state) => {
       state.isUserOpen = !state.isUserOpen;
+    },
+    toggleVoicebtn: (state) => {
+      state.isVoiceBtn = !state.isVoiceBtn;
     },
 
     closeMenu: (state) => {
@@ -38,5 +42,6 @@ export const {
   hideMenuBar,
   showMenuBar,
   toggleUserMenu,
+  toggleVoicebtn,
 } = appSlice.actions;
 export default appSlice.reducer;
